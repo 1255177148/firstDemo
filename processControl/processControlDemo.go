@@ -70,6 +70,8 @@ func SwitchDemo3() {
 		fmt.Println("b == 1")
 	case a == "test switch", b == 4:
 		fmt.Println("a == test switch")
+		break
+		fmt.Println("b != 4")
 	case b == 5:
 		fmt.Println("b == 5")
 	default:

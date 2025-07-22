@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/1255177148/firstDemo/processControl"
-)
+import "github.com/1255177148/firstDemo/circulatePkg"
 
 func main() {
 	//var a complex128 = 1.01 + 0.1i
@@ -42,9 +40,20 @@ func main() {
 	//pa.SetPA()
 	//fmt.Println(aa.String())
 	//fmt.Println(pa.String())
-	processControl.IfDemo1()
-	processControl.SwitchDemo1()
-	processControl.SwitchDemo2()
-	processControl.SwitchDemo3()
-	processControl.SwitchDemo4()
+
+	// 下面是流程控制，if和switch
+	//processControl.IfDemo1()
+	//processControl.SwitchDemo1()
+	//processControl.SwitchDemo2()
+	//processControl.SwitchDemo3()
+	//processControl.SwitchDemo4()
+
+	// 下面是循环
+	circulatePkg.ForDemo1()
+	circulatePkg.ForDemo2()
+	circulatePkg.ForDemo3()
+	circulatePkg.ForDemo4()
+	circulatePkg.ForDemo5()
+	circulatePkg.ForDemo6()
+	circulatePkg.ForDemo7()
 }
