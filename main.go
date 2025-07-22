@@ -5,7 +5,6 @@ import (
 	"github.com/1255177148/firstDemo/structDemo"
 )
 
-
 func main() {
 	var a complex128 = 1.01 + 0.1i
 	b := 2 + 0.2i
@@ -14,8 +13,8 @@ func main() {
 	y := imag(c)
 	fmt.Println(a, b, c, x, y)
 
-	var s string = "语言"
-	var runes []rune = []rune(s)
+	var s = "语言"
+	var runes = []rune(s)
 	fmt.Println(runes)
 	fmt.Println(len(runes))
 	var bytes []byte = []byte(s)
