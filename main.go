@@ -1,6 +1,6 @@
 package main
 
-import "github.com/1255177148/firstDemo/circulatePkg"
+import "github.com/1255177148/firstDemo/ClosurePkg"
 
 func main() {
 	//var a complex128 = 1.01 + 0.1i
@@ -49,11 +49,14 @@ func main() {
 	//processControl.SwitchDemo4()
 
 	// 下面是循环
-	circulatePkg.ForDemo1()
-	circulatePkg.ForDemo2()
-	circulatePkg.ForDemo3()
-	circulatePkg.ForDemo4()
-	circulatePkg.ForDemo5()
-	circulatePkg.ForDemo6()
-	circulatePkg.ForDemo7()
+	//circulatePkg.ForDemo1()
+	//circulatePkg.ForDemo2()
+	//circulatePkg.ForDemo3()
+	//circulatePkg.ForDemo4()
+	//circulatePkg.ForDemo5()
+	//circulatePkg.ForDemo6()
+	//circulatePkg.ForDemo7()
+
+	// 下面是闭包函数
+	ClosurePkg.Demo()
 }
