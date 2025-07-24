@@ -1,4 +1,5 @@
 // 并发的线程安全问题
+// 使用锁完成计数累加并发
 package main
 
 import (
