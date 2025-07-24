@@ -1,6 +1,8 @@
 package ClosurePkg
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type A struct {
 	a int
