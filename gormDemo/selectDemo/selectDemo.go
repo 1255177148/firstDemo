@@ -41,6 +41,12 @@ func NewNullString(s string) sql.NullString {
 	}
 }
 
+type BlogResult struct {
+	ID   uint
+	Name string
+	Age  int
+}
+
 func main() {
 	db := linkDB()
 	blog := Blog{}
@@ -92,4 +98,26 @@ func main() {
 	var resultMap map[string]interface{}
 	db.Model(&Blog{}).Where("name = ?", "张三").Find(&resultMap)
 	fmt.Println(resultMap)
+
+	// 分批处理
+	fmt.Println("分批处理查询---")
+	var blogResult []BlogResult
+	// FindInBatches反射结构体，不能反射map切片，所以只能用结构体来接收
+	result := db.Table("blogs").Where("age > (?)", db.Table("blogs").Select("AVG(age)")).FindInBatches(&blogResult, 3, func(tx *gorm.DB, batch int) error {
+		for _, blog := range blogResult {
+			fmt.Println(blog.Name)
+		}
+		return nil
+	})
+	if result.Error != nil {
+		fmt.Println(result.Error)
+	}
+
+	// 分组统计
+	var countMap []map[string]interface{}
+	db.Table("blogs").Select("GROUP_CONCAT(name separator ',') as names", "count(1) as count", "age").Group("age").Find(&countMap)
+	fmt.Println("分组统计------")
+	for _, value := range countMap {
+		fmt.Println(value)
+	}
 }
